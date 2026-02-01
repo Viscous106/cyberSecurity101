@@ -1,71 +1,38 @@
-# 🛡️ Commercial Cyber Security Notes: Securing Accounts 🛡️
+# Introduction to Account Security
 
-## Reference Video:
-- [How to Secure Your Online Accounts](https://www.youtube.com/watch?v=fJYdAN4Vh5c)
+In the digital world, security is built on several foundational blocks. The primary goal is **authorization**: verifying that you are the person who should have access to an account. This is typically done with a combination of a **username** and a **password**. The core idea is that only the legitimate user should know both of these credentials.
 
-## Notes:
+However, attackers have developed numerous methods to try and defeat this system.
 
-### 1: Understanding and Preventing Dictionary Attacks
+## Password Attacks
 
-A **dictionary attack** attempts to guess passwords by trying a pre-compiled list of common words, phrases, or previously compromised passwords. Attackers use automated tools to rapidly test these potential credentials against a target account.
+### Dictionary and Brute-Force Attacks
 
-#### Prevention Strategies:
-1.  **Strong, Unique Passwords**: Use long (12-16+ characters), complex passwords combining letters, numbers, and symbols. Never reuse passwords.
-2.  **Multi-Factor Authentication (MFA)**: Adds an extra layer of security, making it harder for attackers even with a compromised password.
-3.  **Account Lockout Policies**: Temporarily lock accounts after multiple failed login attempts to slow down attacks.
-4.  **Rate Limiting & CAPTCHA**: Limit login attempts per IP and use CAPTCHA to deter bots.
-5.  **Education & Password Managers**: Educate users on password best practices and encourage the use of password managers.
+Attackers often try to guess your password. Two common methods are:
 
-### 2: Understanding and Preventing Brute-Force Attacks
+1.  **Dictionary Attacks**: Using a list of common words and phrases as potential passwords.
+2.  **Brute-Force Attacks**: Systematically trying every possible combination of characters.
 
-A **brute-force attack** systematically tries every possible combination of characters until the correct password is found. Unlike dictionary attacks that use pre-defined lists, brute-force attacks generate and test all possible character combinations, making them more exhaustive but also more time-consuming.
+The lecture illustrates that as password complexity increases, the time it takes for a brute-force attack to succeed grows exponentially.
 
-#### How it works:
-1.  **Systematic Guessing**: Automated tools attempt every possible character combination (e.g., "a", "b", "c", ..., "aa", "ab", ...).
-2.  **Increased Complexity, Increased Time**: The time required increases exponentially with password length and complexity.
+*   **4-digit PIN**: `10 x 10 x 10 x 10` = 10,000 possibilities. An attacker can generate these almost instantly.
+*   **4-letter password (lowercase)**: `26 x 26 x 26 x 26` = 456,976 possibilities.
+*   **4-letter password (upper and lowercase)**: `52 x 52 x 52 x 52` = Over 7 million possibilities. Still crackable in seconds.
+*   **4-character password (letters, numbers, symbols)**: `~94 x ~94 x ~94 x ~94` = Over 78 million possibilities. This starts to take a noticeable amount of time for an attacker.
 
-#### Prevention Strategies:
-Prevention strategies for brute-force attacks are largely similar to those for dictionary attacks, as both rely on automated password guessing:
-1.  **Strong, Unique Passwords**: The primary defense. Longer and more complex passwords significantly increase the time and computational resources required for a successful brute-force attack.
-2.  **Multi-Factor Authentication (MFA)**: Essential for adding a second verification step, rendering a guessed password insufficient.
-3.  **Account Lockout Policies**: Crucial for blocking attackers after a few failed attempts.
-4.  **Rate Limiting**: Restricts the number of login attempts per time unit, making brute-force attacks impractical.
-5.  **CAPTCHA/reCAPTCHA**: Helps distinguish between human users and bots.
-6.  **Network-Level Protections**: Firewalls and intrusion detection/prevention systems (IDS/IPS) can detect and block suspicious login activity.
-7.  **Monitor Login Attempts**: Regularly review logs for unusual patterns of failed login attempts.
+The key takeaway is that longer and more complex passwords raise the bar for attackers, making their job much more difficult and time-consuming.
 
-By implementing these comprehensive measures, the risk of both dictionary and brute-force attacks can be significantly mitigated.
+### The Security vs. Usability Tradeoff
 
----
+There is a constant balance between security and usability. A 30-character random password is very secure, but it's impossible to remember and difficult to type. A simple password is easy to use but offers little security. As you consider your security options, you must think about what makes the most sense for your use case.
 
-## Rules for Staying Safe from Password Vulnerabilities:
+## NIST Password Guidelines
 
-1.  **Create Strong & Unique Passwords for Every Account**:
-    *   **Length is Key**: Make your passwords at least 16 characters long.
-    *   **Complexity Matters**: Mix uppercase and lowercase letters, numbers, and symbols.
-    *   **No Personal Info**: Avoid using your name, birthday, or other easily guessable information.
-    *   **One Account, One Password**: Never reuse passwords across different services. If one account is breached, all your accounts are at risk.
+The **National Institute of Standards and Technology (NIST)** provides best practices for password security. Here are some of their key recommendations:
 
-2.  **Enable Multi-Factor Authentication (MFA) Everywhere**:
-    *   MFA is your best defense, even if your password is stolen. It requires a second form of verification (like a code from your phone) to log in.
-    *   Prioritize enabling MFA on critical accounts like email, banking, and social media.
-
-3.  **Use a Password Manager**:
-    *   It's nearly impossible to remember dozens of strong, unique passwords. A password manager can generate and securely store them for you.
-    *   You only need to remember one strong master password for the manager itself.
-
-4.  **Beware of Phishing Scams**:
-    *   Be skeptical of unsolicited emails, texts, or calls asking for your login information.
-    *   Always verify the sender and go directly to the official website instead of clicking on suspicious links.
-
-5.  **Keep Your Software and Devices Updated**:
-    *   Software updates often contain critical security patches that protect you from the latest threats.
-    *   Enable automatic updates on your operating system, web browser, and other applications.
-
-6.  **Regularly Review Your Account Activity**:
-    *   Periodically check your login history and connected applications on important accounts.
-    *   If you see any suspicious activity, change your password immediately and revoke access for any unrecognized devices or apps.
-
-7.  **Avoid Using Public Wi-Fi for Sensitive Tasks**:
-    *   Public Wi-Fi networks are often unsecured, making it easier for attackers to intercept your data.
-    *   If you must use public Wi-Fi, use a Virtual Private Network (VPN) to encrypt your connection.
+*   **Length**: Passwords should be at least **8 characters** long.
+*   **Character Set**: Allow for all printable ASCII characters and Unicode symbols, up to at least **64 characters**.
+*   **Prohibited Passwords**: Check new passwords against lists of known breached passwords, dictionary words, and context-specific words (like the service name or username).
+*   **No Password Hints**: Do not provide password hints to unauthenticated users.
+*   **No Forced Periodic Changes**: Don't require users to change their passwords on a fixed schedule, as this often leads to weaker, more predictable passwords.
+*   **Failed Attempt Limits**: Limit the number of failed login attempts to lock out attackers.

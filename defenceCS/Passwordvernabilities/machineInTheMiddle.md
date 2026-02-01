@@ -1,6 +1,8 @@
-# Man-in-the-Middle (MITM) Attacks
+# Machine-in-the-Middle (MITM) Attacks
 
-A **Man-in-the-Middle (MITM) attack** is a type of cyberattack where an attacker secretly intercepts and relays messages between two parties who believe they are communicating directly with each other. The attacker effectively "sits in the middle" of the conversation, allowing them to eavesdrop, alter, or inject malicious content into the communication without either party being aware.
+A **Machine-in-the-Middle (MITM) attack** is a sophisticated attack where adversaries compromise devices between you and the service you are trying to connect to. By intercepting the connection, often at a router or switch, the attacker can secretly view and alter your data.
+
+A more technical definition is that an attacker secretly intercepts and relays messages between two parties who believe they are communicating directly with each other. The attacker effectively "sits in the middle" of the conversation, allowing them to eavesdrop on or manipulate the communication without either party being aware.
 
 ## How a MITM Attack Works:
 

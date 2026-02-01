@@ -1,9 +1,18 @@
-# Credential Stuffing (The Brute Force)
+# Credential Stuffing
 
-Credential Stuffing is an Automated Attack. It relies on the fact that people often reuse the same password across multiple websites.
+**Credential Stuffing** is an automated attack that uses lists of usernames and passwords from a previous data breach to try and gain access to other, unrelated services.
 
-    How it works: Attackers take a list of leaked usernames and passwords (from a past data breach, like a LinkedIn or Adobe leak) and use automated bots to "stuff" those credentials into the login pages of other popular sites (like Amazon, Netflix, or GitHub).
+## How It Works
 
-The Goal: To see which accounts they can break into using the stolen data.
+1.  **Breach**: A website or service is compromised, and its user database (containing usernames and passwords) is stolen.
+2.  **Automation**: Attackers take this list and use bots to systematically "stuff" these credentials into the login forms of many other popular websites (e.g., banking, email, social media).
+3.  **Success Condition**: The attack succeeds because many people reuse the same password across multiple websites. If a user's credentials from the breached site are the same as their credentials on a target site, the attacker gains access.
 
-Example: If your password for a random gaming forum was leaked in 2023, a bot will try that same email/password combo on your Gmail and Bank accounts automatically.
+**Example**: If you used the same password for a gaming forum that was breached and for your email account, an attacker can use the leaked password from the forum to log into your email.
+
+## How to Protect Yourself
+
+The single most effective defense against credential stuffing is to **use a unique password for every single account.**
+
+*   If you are not reusing passwords, a breach on one site does not put your other accounts at risk.
+*   Using a **Password Manager** is the most effective way to create and manage unique, strong passwords for all of your accounts.
